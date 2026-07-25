@@ -1,4 +1,10 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 class Rule(ABC):
-    pass
+    def __init__(self, name: str, score: int):
+        self.name = name
+        self.score = score
+
+    @abstractmethod
+    def evaluate(self, transaction):
+        pass
