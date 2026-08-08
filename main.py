@@ -3,6 +3,7 @@ from app.models.account import Account
 from app.models.transaction import Transaction
 from app.models.alert import Alert
 
+from app.loaders.transaction_loader import TransactionLoader
 
 from app.rules.large_amount_rule import LargeAmountRule
 from app.rules.high_risk_country_rule import HighRiskCountryRule
@@ -15,6 +16,7 @@ from datetime import datetime
 
 
 ALERT_THRESHOLD = 60
+
 
 
 
@@ -81,19 +83,30 @@ def print_results(score, broken_rules):
 
 
 def main():
-    transaction = create_sample_transaction()
+
+    alert_id = 1
+
+    loader = TransactionLoader("data/input/transactions.csv")
+
+    transactions = loader.load()
+
+    #transaction = create_sample_transaction()
+    
     rules = create_rules()
     
     engine = RuleEngine(rules)
 
-    score, broken_rules = engine.evaluate(transaction)
+    for transaction in transactions:
 
-    print_results(score, broken_rules)
+        score, broken_rules = engine.evaluate(transaction)
 
-    if score > ALERT_THRESHOLD:
-        print('\nAn alert is created.\n')
-        alert = Alert(1001, transaction, score, broken_rules, datetime.now())
-        print(alert)
+        print_results(score, broken_rules)
+
+        if score > ALERT_THRESHOLD:
+            print('\nAn alert is created.\n')
+            alert = Alert(alert_id, transaction, score, broken_rules, datetime.now())
+            print(alert)
+            alert_id += 1
 
 
 if __name__ == '__main__':
