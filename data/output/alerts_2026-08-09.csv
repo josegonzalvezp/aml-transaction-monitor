@@ -1,0 +1,26 @@
+alert_id;transaction_id;score;broken_rules;created_at
+1;8;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.100291
+2;15;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.101170
+3;18;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.101731
+4;22;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.102205
+5;25;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.102717
+6;36;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.104363
+7;38;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.104895
+8;43;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.105335
+9;59;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.105861
+10;60;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.106320
+11;64;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.106803
+12;66;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.107261
+13;68;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.107727
+14;73;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.108166
+15;81;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.108641
+16;82;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.109087
+17;83;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.109574
+18;84;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.110026
+19;88;75;Large Amount Rule, High Risk Country Rule, Different Countries Rule;2026-08-09 20:08:17.110444
+20;91;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.110904
+21;92;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.111317
+22;93;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.111848
+23;94;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.112253
+24;97;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.112671
+25;100;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-08-09 20:08:17.113119

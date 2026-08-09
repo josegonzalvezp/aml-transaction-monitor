@@ -5,6 +5,8 @@ from app.models.alert import Alert
 
 from app.loaders.transaction_loader import TransactionLoader
 
+from app.writers.alert_writer import AlertWriter
+
 from app.rules.large_amount_rule import LargeAmountRule
 from app.rules.high_risk_country_rule import HighRiskCountryRule
 from app.rules.different_countries_rule import DifferentCountriesRule
@@ -96,16 +98,24 @@ def main():
     
     engine = RuleEngine(rules)
 
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    writer = AlertWriter(f"data/output/alerts_{today}.csv")
+
     for transaction in transactions:
 
         score, broken_rules = engine.evaluate(transaction)
 
-        print_results(score, broken_rules)
+        #print_results(score, broken_rules)
+    
 
         if score > ALERT_THRESHOLD:
-            print('\nAn alert is created.\n')
+        #    print('\nAn alert is created.\n')
             alert = Alert(alert_id, transaction, score, broken_rules, datetime.now())
-            print(alert)
+        #    print(alert)
+
+            writer.write(alert)
+
             alert_id += 1
 
 
