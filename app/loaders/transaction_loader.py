@@ -10,6 +10,7 @@ class TransactionLoader:
 
     def load(self):
         df = pd.read_csv(self.archivo, sep=";")
+        df["date"] = pd.to_datetime(df["date"])
         transactions = []
 
         for _, row in df.iterrows():

@@ -1,6 +1,6 @@
-from app.rules.rule import Rule
+from app.rules.transaction_rule import TransactionRule
 
-class RoundAmountRule(Rule):
+class RoundAmountRule(TransactionRule):
 
     def __init__(self):
         super().__init__(

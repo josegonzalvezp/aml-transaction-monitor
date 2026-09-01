@@ -1,6 +1,6 @@
-from app.rules.rule import Rule
+from app.rules.transaction_rule import TransactionRule
 
-class HighRiskCountryRule(Rule):
+class HighRiskCountryRule(TransactionRule):
 
     def __init__(self, countries):
         super().__init__(

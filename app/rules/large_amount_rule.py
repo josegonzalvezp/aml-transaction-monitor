@@ -1,6 +1,6 @@
-from app.rules.rule import Rule
+from app.rules.transaction_rule import TransactionRule
 
-class LargeAmountRule(Rule):
+class LargeAmountRule(TransactionRule):
 
     def __init__(self, threshold: float):
         super().__init__(
@@ -10,6 +10,4 @@ class LargeAmountRule(Rule):
         self.threshold = threshold
 
     def evaluate(self, transaction):
-        if transaction.amount > self.threshold:
-            return True
-        return False
+        return transaction.amount > self.threshold

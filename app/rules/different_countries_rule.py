@@ -1,6 +1,6 @@
-from app.rules.rule import Rule
+from app.rules.transaction_rule import TransactionRule
 
-class DifferentCountriesRule(Rule):
+class DifferentCountriesRule(TransactionRule):
     def __init__(self):
         super().__init__(
             name="Different Countries Rule",

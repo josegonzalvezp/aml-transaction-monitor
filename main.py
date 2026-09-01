@@ -11,6 +11,12 @@ from app.rules.large_amount_rule import LargeAmountRule
 from app.rules.high_risk_country_rule import HighRiskCountryRule
 from app.rules.different_countries_rule import DifferentCountriesRule
 from app.rules.round_amount_rule import RoundAmountRule
+from app.rules.cumulative_incoming_amount_rule import CumulativeIncomingAmountRule
+from app.rules.cumulative_outgoing_amount_rule import CumulativeOutgoingAmountRule
+from app.rules.incoming_outgoing_ratio_rule import IncomingOutgoingRatioRule
+from app.rules.number_beneficiaries_rule import NumberBeneficiariesRule
+from app.rules.same_beneficiary_rule import SameBeneficiaryRule
+from app.rules.transaction_frequency_rule import TransactionFrequencyRule
 
 from app.engine.rule_engine import RuleEngine
 
@@ -69,7 +75,13 @@ def create_rules():
         LargeAmountRule(threshold=10000),
         HighRiskCountryRule(countries=['Iran', 'China', 'Russia']),
         DifferentCountriesRule(),
-        RoundAmountRule()
+        RoundAmountRule(),
+        CumulativeIncomingAmountRule(threshold=50000, days=7),
+        CumulativeOutgoingAmountRule(threshold=50000, days=7),
+        IncomingOutgoingRatioRule(threshold=0.7, days=7),
+        NumberBeneficiariesRule(threshold=4, days=7),
+        SameBeneficiaryRule(threshold=5, days=7),
+        TransactionFrequencyRule(threshold=13, days=7)
     ]
     return rules
 
@@ -96,7 +108,7 @@ def main():
     
     rules = create_rules()
     
-    engine = RuleEngine(rules)
+    engine = RuleEngine(rules, transactions)
 
     today = datetime.now().strftime("%Y-%m-%d")
 

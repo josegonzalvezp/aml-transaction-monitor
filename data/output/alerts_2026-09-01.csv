@@ -1,0 +1,119 @@
+alert_id;transaction_id;score;broken_rules;created_at
+1;8;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-09-01 18:30:49.789318
+2;15;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-09-01 18:30:49.791903
+3;18;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-09-01 18:30:49.793962
+4;22;83;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule;2026-09-01 18:30:49.796778
+5;25;113;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount;2026-09-01 18:30:49.799344
+6;30;100;Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.803596
+7;33;88;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount;2026-09-01 18:30:49.806139
+8;36;143;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.807623
+9;38;173;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.809676
+10;40;163;High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.811894
+11;43;143;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.814081
+12;47;198;Large Amount Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.816739
+13;48;103;High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.817786
+14;50;78;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.819921
+15;51;70;Different Countries Rule, Cumulative Incoming Amount, Number of Beneficiaries;2026-09-01 18:30:49.821344
+16;52;70;Different Countries Rule, Cumulative Incoming Amount, Number of Beneficiaries;2026-09-01 18:30:49.822454
+17;53;100;Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.823548
+18;54;100;Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.824516
+19;55;100;Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.825519
+20;57;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.826927
+21;58;110;Large Amount Rule, Different Countries Rule, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.828148
+22;59;203;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.829390
+23;60;173;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.830645
+24;62;78;Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.832557
+25;64;203;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.834257
+26;65;150;Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.836343
+27;66;173;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.837604
+28;67;70;Different Countries Rule, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.838605
+29;68;173;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.839588
+30;69;78;Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.840549
+31;70;178;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.841685
+32;71;65;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount;2026-09-01 18:30:49.842667
+33;72;100;Different Countries Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.843689
+34;73;143;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.844855
+35;74;133;High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.846046
+36;75;193;High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.847255
+37;76;185;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.848435
+38;77;185;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.849594
+39;78;185;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.850778
+40;79;185;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.852003
+41;80;215;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.853645
+42;81;203;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.854994
+43;82;143;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount;2026-09-01 18:30:49.856094
+44;83;203;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.857057
+45;84;143;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount;2026-09-01 18:30:49.858055
+46;85;70;Different Countries Rule, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.859095
+47;87;70;Different Countries Rule, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.861157
+48;88;165;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.862798
+49;89;70;Different Countries Rule, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.863982
+50;90;78;Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.865057
+51;91;143;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount;2026-09-01 18:30:49.866473
+52;92;173;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Transaction Frequency;2026-09-01 18:30:49.868767
+53;93;233;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.870392
+54;94;233;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.871619
+55;95;98;Round Amount Rule, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.872609
+56;96;70;Different Countries Rule, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.873626
+57;97;203;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.874578
+58;98;133;High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.875520
+59;99;238;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.876652
+60;100;233;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.877568
+61;101;98;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.878664
+62;102;150;Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary;2026-09-01 18:30:49.879716
+63;103;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.880769
+64;104;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.881982
+65;105;150;Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.883317
+66;106;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.884672
+67;107;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.885962
+68;108;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.887203
+69;109;108;Large Amount Rule, Round Amount Rule, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.888194
+70;111;68;Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.889381
+71;112;68;Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.890356
+72;113;88;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount;2026-09-01 18:30:49.892113
+73;114;118;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.894399
+74;115;118;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.896478
+75;116;135;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.898441
+76;117;113;Large Amount Rule, High Risk Country Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount;2026-09-01 18:30:49.900261
+77;118;118;Large Amount Rule, Different Countries Rule, Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.902040
+78;119;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.903809
+79;120;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.905729
+80;121;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.907693
+81;122;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.909635
+82;123;158;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.911351
+83;124;150;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.912928
+84;125;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.914168
+85;126;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.915904
+86;127;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.917133
+87;128;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.918497
+88;129;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.920598
+89;130;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.922410
+90;131;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.924057
+91;132;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.925267
+92;133;100;Different Countries Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries;2026-09-01 18:30:49.926234
+93;135;70;Different Countries Rule, Cumulative Outgoing Amount, Number of Beneficiaries;2026-09-01 18:30:49.927368
+94;137;130;Different Countries Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.928486
+95;151;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.931875
+96;152;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.933024
+97;153;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.934201
+98;154;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.935327
+99;155;128;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.936680
+100;156;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.937897
+101;157;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.939179
+102;158;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.940373
+103;159;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.941508
+104;160;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.942640
+105;161;120;Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.943763
+106;164;68;Round Amount Rule, Cumulative Incoming Amount, Incoming Outgoing Ratio;2026-09-01 18:30:49.945116
+107;171;65;High Risk Country Rule, Different Countries Rule, Cumulative Incoming Amount;2026-09-01 18:30:49.947193
+108;172;158;Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.948321
+109;173;180;Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.949503
+110;174;180;Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.950644
+111;175;188;Round Amount Rule, Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.951779
+112;176;180;Cumulative Incoming Amount, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Same Beneficiary, Transaction Frequency;2026-09-01 18:30:49.952925
+113;177;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.954087
+114;178;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.955521
+115;179;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.956708
+116;180;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.957856
+117;181;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.959016
+118;182;138;Different Countries Rule, Round Amount Rule, Cumulative Outgoing Amount, Incoming Outgoing Ratio, Number of Beneficiaries, Transaction Frequency;2026-09-01 18:30:49.960120
