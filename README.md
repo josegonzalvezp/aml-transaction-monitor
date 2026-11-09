@@ -2,413 +2,261 @@
 
 A Python-based Anti-Money Laundering (AML) transaction monitoring system designed to detect potentially suspicious financial activity through configurable rules and generate alerts for further investigation.
 
-The project is being developed incrementally, starting with transaction-level rule evaluation and progressively moving towards historical and behavioral analysis.
-
----
+The project is being developed incrementally, progressively introducing transaction-level and historical transaction analysis, with a focus on object-oriented programming, modular architecture, testing, and maintainability.
 
 ## Project Overview
 
-The system analyzes financial transactions and assigns a **risk score** based on the rules triggered by each transaction.
+The AML Transaction Monitor processes financial transactions and evaluates them against a set of configurable rules. When a transaction meets one or more suspicious activity criteria, the system generates an alert containing the transaction details, the triggered rules, and an aggregated risk score.
 
-When the score exceeds a configurable threshold, an **Alert** is generated containing the relevant information about the transaction and the rules that were triggered.
+The system currently supports:
 
-The current version processes transactions from a CSV file and generates a separate alerts file for each execution day, allowing the resulting alerts to be reviewed independently by an AML analyst.
+- Transaction-level rule evaluation.
+- Historical transaction analysis over configurable time windows.
+- Customer activity monitoring.
+- Configurable rule scores and thresholds.
+- CSV transaction loading and alert generation.
+- Automated testing with pytest.
 
-### Current workflow
+## Project Workflow
 
-```text
-transactions.csv
-       │
-       ▼
-TransactionLoader
-       │
-       ▼
-List[Transaction]
-       │
-       ▼
-RuleEngine
-       │
-       ├── Large Amount
-       ├── Round Amount
-       ├── Different Countries
-       └── High Risk Country
-       │
-       ▼
-Risk Score
-       │
-       ▼
-Score > Alert Threshold?
-       │
-      YES
-       │
-       ▼
-      Alert
-       │
-       ▼
-  AlertWriter
-       │
-       ▼
-alerts_YYYY-MM-DD.csv
-       │
-       ▼
-    AML Analyst
-```
+The application follows this general workflow:
 
----
+1. **Data Loading:** Transactions are read from a CSV input file and converted into domain objects.
+2. **Context Creation:** Historical transaction data is made available through `TransactionContext`.
+3. **Rule Evaluation:** The `RuleEngine` evaluates each transaction against the configured monitoring rules.
+4. **Alert Generation:** Transactions that trigger one or more rules generate an alert with an aggregated score.
+5. **Output:** Generated alerts are exported to a CSV file for further investigation.
 
 ## Project Structure
 
+The project follows a modular structure, separating domain models, transaction processing, rules, data loading, and output generation.
+
 ```text
 aml-transaction-monitor/
-│
-├── app/
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── customer.py
-│   │   ├── account.py
-│   │   ├── transaction.py
-│   │   └── alert.py
-│   │
-│   ├── rules/
-│   │   ├── __init__.py
-│   │   ├── rule.py
-│   │   ├── large_amount_rule.py
-│   │   ├── round_amount_rule.py
-│   │   ├── different_countries_rule.py
-│   │   └── high_risk_country_rule.py
-│   │
-│   ├── services/
-│   │   ├── __init__.py
-│   │   └── rule_engine.py
-│   │
-│   ├── loaders/
-│   │   ├── __init__.py
-│   │   └── transaction_loader.py
-│   │
-│   └── writers/
-│       ├── __init__.py
-│       └── alert_writer.py
-│
-├── data/
-│   └── transactions.csv
-│
-├── tests/
-│   ├── models/
-│   └── loaders/
-│
-├── main.py
-├── README.md
-└── requirements.txt
+|
++-- app/
+|   |
+|   +-- context/
+|   |   +-- transaction_context.py
+|   |
+|   +-- engine/
+|   |   +-- rule_engine.py
+|   |
+|   +-- exceptions/
+|   |
+|   +-- loaders/
+|   |   +-- transaction_loader.py
+|   |
+|   +-- models/
+|   |   +-- account.py
+|   |   +-- alert.py
+|   |   +-- customer.py
+|   |   +-- transaction.py
+|   |
+|   +-- rules/
+|   |   +-- cumulative_incoming_amount_rule.py
+|   |   +-- cumulative_outgoing_amount_rule.py
+|   |   +-- different_countries_rule.py
+|   |   +-- high_risk_country_rule.py
+|   |   +-- historical_rule.py
+|   |   +-- incoming_outgoing_ratio_rule.py
+|   |   +-- large_amount_rule.py
+|   |   +-- number_beneficiaries_rule.py
+|   |   +-- round_amount_rule.py
+|   |   +-- rule.py
+|   |   +-- same_beneficiary_rule.py
+|   |   +-- transaction_frequency_rule.py
+|   |   +-- transaction_rule.py
+|   |
+|   +-- utils/
+|   |
+|   +-- writers/
+|       +-- alert_writer.py
+|
++-- data/
+|   |
+|   +-- input/
+|   |   +-- transactions.csv
+|   |
+|   +-- output/
+|       +-- alerts_2026-08-09.csv
+|       +-- alerts_2026-09-01.csv
+|
++-- docs/
+|   +-- README.md
+|
++-- tests/
+|   |
+|   +-- context/
+|   |   +-- test_transaction_context.py
+|   |
+|   +-- engine/
+|   |
+|   +-- loaders/
+|   |   +-- test_transaction_loader.py
+|   |
+|   +-- models/
+|   |   +-- test_account.py
+|   |   +-- test_customer.py
+|   |   +-- test_transaction.py
+|   |
+|   +-- rules/
+|   |   +-- test_cumulative_incoming_amount_rule.py
+|   |   +-- test_cumulative_outgoing_amount_rule.py
+|   |   +-- test_incoming_outgoing_ratio_rule.py
+|   |   +-- test_number_beneficiaries_rule.py
+|   |   +-- test_same_beneficiary_rule.py
+|   |   +-- test_transaction_frequency_rule.py
+|   |
+|   +-- writers/
+|       +-- test_alert_writer.py
+|
++-- main.py
++-- requirements.txt
++-- README.md
 ```
 
----
+## Architecture and Main Components
 
-## Domain Model
+### Domain Models
 
-### Customer
+The application uses object-oriented domain models to represent the main entities involved in financial transactions:
 
-Represents a customer participating in financial transactions.
+- **Customer:** Represents a customer and their identifying information.
+- **Account:** Represents a bank account, including its IBAN, country, bank, and associated customer.
+- **Transaction:** Represents a financial transaction between an ordering account and a beneficiary account.
+- **Alert:** Stores the information associated with a potentially suspicious transaction, including its score, triggered rules, and creation timestamp.
 
-Main attributes:
+Transaction amounts are validated to prevent negative values.
 
-* `customer_id`
-* `name`
+### Rules
 
-### Account
+The monitoring logic is implemented through a modular rule system.
 
-Represents a bank account belonging to a customer.
+The project distinguishes between two types of rules:
 
-Main attributes:
+- **TransactionRule:** Evaluates individual transaction characteristics.
+- **HistoricalRule:** Evaluates transaction behaviour using historical activity.
 
-* `iban`
-* `country`
-* `bank`
-* `customer`
+This structure allows new monitoring rules to be introduced without modifying the core evaluation engine.
 
-### Transaction
+### Transaction Context
 
-Represents a financial transaction between two accounts.
+`TransactionContext` provides access to historical transactions associated with a customer.
 
-Main attributes:
+It supports retrieving:
 
-* `transaction_id`
-* `ordering_account`
-* `beneficiary_account`
-* `amount`
-* `currency`
-* `date`
-* `concept`
+- Outgoing transactions.
+- Incoming transactions.
+- All transactions involving a customer.
+- Transactions between a specific ordering customer and beneficiary customer.
 
-### Rule
+Historical queries use configurable time windows and include transactions within the defined date boundaries.
 
-Defines a condition that can identify potentially suspicious transaction activity.
+### Rule Engine
 
-Each rule evaluates a transaction and returns whether the rule has been broken.
+`RuleEngine` is responsible for evaluating transactions against the configured rules.
 
-Rules also have an associated risk score.
+It collects the rules triggered by each transaction and aggregates their scores to determine whether an alert should be generated.
 
-### Alert
+### Data Loading
 
-Represents a potentially suspicious transaction detected by the monitoring system.
+`TransactionLoader` uses pandas to read transaction data from CSV files.
 
-An alert contains information such as:
+It converts the input records into domain objects and handles date conversion and validation before returning the transactions to the application.
 
-* Alert ID
-* Risk score
-* Broken rules
-* Creation timestamp
-* Transaction information
+### Alert Generation and Output
 
----
+When a transaction triggers monitoring rules, an `Alert` is generated.
 
-## Current Rules
+`AlertWriter` exports alerts to CSV files, including:
 
-The current implementation includes four transaction-level rules.
+- Alert ID.
+- Transaction ID.
+- Aggregated score.
+- Triggered rules.
+- Creation timestamp.
 
-### Large Amount Rule
+The output file is created with its headers even when no alerts are generated.
 
-Triggers when the transaction amount exceeds a configurable threshold.
+## Current Monitoring Rules
 
-Example:
+The project currently implements ten monitoring rules.
 
-```text
-Transaction amount: €20,000
-Threshold: €10,000
+### Transaction-Level Rules
 
-→ Rule triggered
-```
+| Rule | Description |
+|---|---|
+| Large Amount | Detects transactions exceeding a configured amount threshold. |
+| Round Amount | Detects transactions involving round monetary amounts. |
+| Different Countries | Identifies transactions where the ordering and beneficiary accounts belong to different countries. |
+| High Risk Country | Detects transactions involving countries classified as high risk. |
 
-### Round Amount Rule
+### Historical Rules
 
-Detects transactions with round amounts according to the configured rule.
+| Rule | Description |
+|---|---|
+| Cumulative Incoming Amount | Detects customers receiving a cumulative amount above a configured threshold within a time window. |
+| Cumulative Outgoing Amount | Detects customers sending a cumulative amount above a configured threshold within a time window. |
+| Incoming/Outgoing Ratio | Identifies unusual relationships between a customer's incoming and outgoing transaction amounts. |
+| Number of Beneficiaries | Detects customers sending money to an unusually high number of different beneficiaries. |
+| Same Beneficiary | Identifies repeated transactions between the same ordering customer and beneficiary. |
+| Transaction Frequency | Detects unusually frequent transaction activity within a configured period. |
 
-Example:
-
-```text
-€5,000
-€10,000
-€20,000
-
-→ Rule triggered
-```
-
-### Different Countries Rule
-
-Detects transactions where the ordering and beneficiary accounts belong to different countries.
-
-### High Risk Country Rule
-
-Detects transactions involving countries included in the configured high-risk country list.
-
----
-
-## Rule Engine
-
-The `RuleEngine` receives a collection of rules and evaluates each transaction against all of them.
-
-```text
-Transaction
-     │
-     ├── Rule 1 → True
-     ├── Rule 2 → False
-     ├── Rule 3 → True
-     └── Rule 4 → True
-              │
-              ▼
-        Risk Score
-              +
-        Broken Rules
-```
-
-Each triggered rule contributes its configured score to the transaction's total risk score.
-
-If the total score exceeds the configured alert threshold, an `Alert` is generated.
-
-This approach allows new monitoring rules to be added without modifying the core evaluation logic.
-
----
-
-## Data Loading
-
-Transactions are currently loaded from a CSV dataset using `pandas`.
-
-The `TransactionLoader` is responsible for:
-
-1. Reading the CSV file.
-2. Iterating through the transaction records.
-3. Creating the corresponding `Customer` objects.
-4. Creating the corresponding `Account` objects.
-5. Creating the corresponding `Transaction` objects.
-6. Returning a list of transactions.
-
-The rest of the application does not need to know how the data was originally loaded.
-
----
-
-## Alert Output
-
-Detected alerts are exported to a daily CSV file.
-
-Example:
-
-```text
-data/
-└── alerts/
-    ├── alerts_2026-08-09.csv
-    ├── alerts_2026-08-10.csv
-    └── alerts_2026-08-11.csv
-```
-
-The output is designed to provide an AML analyst with a manageable set of alerts to investigate for each execution day.
-
-The current output contains information such as:
-
-* `alert_id`
-* `transaction_id`
-* `score`
-* `broken_rules`
-* `created_at`
-
-The `transaction_id` provides a direct reference back to the original transaction in the input dataset.
-
----
+Each rule has its own evaluation logic and configurable parameters, such as thresholds, time windows, and risk scores.
 
 ## Testing
 
-The project uses `pytest` for automated testing.
+The project uses **pytest** for automated testing.
 
-Tests are being developed alongside the application classes to verify the behavior of individual components.
+Tests are organized by component, covering:
 
-Current testing includes model and transaction loading functionality.
+- Domain model behaviour and validation.
+- Transaction loading and date handling.
+- Historical transaction retrieval and filtering.
+- Individual historical monitoring rules.
+- Alert CSV generation.
 
-Tests can be executed from the project root with:
+The test suite also covers edge cases, including invalid dates, negative transaction amounts, empty alert outputs, and transactions with unsorted dates.
+
+To run the complete test suite:
 
 ```bash
-pytest
+python -m pytest -v
 ```
-
----
 
 ## Technologies
 
-* **Python**
-* **pandas**
-* **pytest**
-* **Git / GitHub**
-* Object-Oriented Programming (OOP)
-* CSV data processing
-
----
+- **Python:** Main programming language.
+- **Pandas:** CSV data loading and processing.
+- **Pytest:** Automated testing.
+- **Git:** Version control.
 
 ## Development Roadmap
 
-### V1 — Transaction-level monitoring ✅
+The project is being developed incrementally:
 
-The first version established the core monitoring engine.
+| Version | Scope | Status |
+|---|---|---|
+| V1 | Initial domain models, transaction loading, basic monitoring rules, rule engine, and alert generation. | Completed |
+| V2 | Improved object-oriented design and expanded transaction-level monitoring capabilities. | Completed |
+| V3 | Historical transaction analysis, `TransactionContext`, and historical monitoring rules. | Completed |
+| V3.1 | Expanded test coverage, date handling, edge-case validation, and code robustness improvements. | Completed |
 
-Implemented:
+## Future Improvements
 
-* Domain models
-* Customer
-* Account
-* Transaction
-* Rule abstraction
-* Multiple transaction-level rules
-* RuleEngine
-* Risk scoring
-* Alert generation
-* Automated tests
+Potential areas for further development include:
 
-The first version was initially designed around processing a single transaction.
-
----
-
-### V2 — Batch processing and daily alert generation ✅
-
-The second version moved the system from a single manually created transaction to a dataset-based workflow.
-
-Implemented:
-
-* CSV transaction dataset
-* `TransactionLoader`
-* Loading multiple transactions
-* Batch transaction processing
-* Daily alert output
-* `AlertWriter`
-* CSV-based alert reports
-* Automated tests for the transaction loader
-
-The system can now process a complete transaction dataset and generate a separate alert report for each execution day.
-
----
-
-### V3 — Historical transaction analysis 🔜
-
-The next major evolution will introduce **historical analysis**.
-
-Instead of evaluating every transaction independently, the system will be able to consider groups of transactions belonging to the same customer or account over a period of time.
-
-Potential rules include:
-
-* Multiple transactions within a short time period
-* Cumulative transaction amounts over a defined period
-* Structuring / transaction splitting
-* Sudden changes in transaction behavior
-* Unusual numbers of countries or counterparties
-* Behavioral deviations from historical activity
-
-Example:
-
-```text
-Customer C001
-
-€9,800
-€9,700
-€9,900
-€9,600
-€9,800
-     │
-     ▼
-€48,800 within a short period
-     │
-     ▼
-Historical / behavioral rule
-     │
-     ▼
-Potential Alert
-```
-
----
-
-### Future Improvements
-
-Possible future developments include:
-
-* Historical customer profiles
-* More sophisticated behavioral rules
-* Database integration
-* Persistent transaction and alert storage
-* Configurable rule definitions
-* Improved alert prioritization
-* Risk scoring calibration
-* Logging
-* Configuration files
-* API integration
-* Dashboard for AML analysts
-* Performance improvements for large datasets
-
----
+- Additional AML monitoring rules and more advanced behavioural patterns.
+- Improved configuration management for monitoring rules and thresholds.
+- More efficient processing of large transaction datasets.
+- Database integration instead of relying exclusively on CSV files.
+- API integration to expose monitoring functionality.
+- More advanced alert prioritization and investigation workflows.
+- Logging and improved exception handling.
 
 ## Project Objective
 
-This project is intended as a practical Python project to explore how an AML transaction monitoring system can be designed using:
+This project aims to build a modular and extensible AML transaction monitoring system while applying Python software development principles.
 
-* Object-Oriented Programming
-* Modular architecture
-* Automated testing
-* Data processing
-* Rule-based risk assessment
-* Batch processing
-* Alert generation
-
-The long-term goal is to evolve the initial rule-based system into a more realistic monitoring platform capable of identifying both **individual suspicious transactions and suspicious behavioral patterns across transaction history**.
+It serves as a practical project to strengthen skills in object-oriented programming, software architecture, data processing, automated testing, and financial crime prevention.

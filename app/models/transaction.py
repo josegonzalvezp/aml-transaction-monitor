@@ -3,10 +3,12 @@ class Transaction:
         self.transaction_id = transaction_id
         self.ordering_account = ordering_account
         self.beneficiary_account = beneficiary_account
-        self.amount = amount
         self.currency = currency
         self.date = date
         self.concept = concept
+        if amount < 0:
+            raise ValueError("Transaction amount cannot be negative")
+        self.amount = amount
     
     def __str__(self):
         return f"{self.ordering_account.iban} -> {self.beneficiary_account.iban} \n {self.amount} {self.currency}"

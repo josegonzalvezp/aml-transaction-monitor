@@ -11,6 +11,10 @@ class TransactionLoader:
     def load(self):
         df = pd.read_csv(self.archivo, sep=";")
         df["date"] = pd.to_datetime(df["date"])
+
+        if df["date"].isna().any():
+            raise ValueError("Transaction dates cannot be empty")
+        
         transactions = []
 
         for _, row in df.iterrows():
